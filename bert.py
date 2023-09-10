@@ -196,14 +196,14 @@ class BertModel(BertPreTrainedModel):
     seq_length = input_shape[1]
 
     # Step 1 : Get word embedding using self.word_embedding
-    inputs_embeds = None
-
+    inputs_embeds = self.word_embedding(input_ids)
     # get position index and position embedding from self.pos_embedding
     pos_ids = self.position_ids[:, :seq_length]
+    
 
     # Step 2 : Get position embedding using self.pos_embedding
-    pos_embeds = None
-
+    pos_embeds = self.pos_embedding(pos_ids)
+    
     # get token type ids, since we are not consider token type, just a placeholder
     tk_type_ids = torch.zeros(input_shape, dtype=torch.long, device=input_ids.device)
     tk_type_embeds = self.tk_type_embedding(tk_type_ids)
