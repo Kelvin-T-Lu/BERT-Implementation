@@ -155,7 +155,7 @@ class BertLayer(nn.Module):
 
     # Step 6: Return the output of this add-norm layer
 
-    return normed_ff_output # remove this line when the function is implemented
+    return normed_ff_output 
 
 
 class BertModel(BertPreTrainedModel):
