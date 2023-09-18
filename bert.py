@@ -190,7 +190,6 @@ class BertModel(BertPreTrainedModel):
 
     self.init_weights()
 
-  # TODO : Complete this function step by step.
   def embed(self, input_ids):
     input_shape = input_ids.size()
     seq_length = input_shape[1]

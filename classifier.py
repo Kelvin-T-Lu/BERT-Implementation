@@ -25,7 +25,6 @@ def seed_everything(seed=11711):
     torch.backends.cudnn.deterministic = True
 
 class BertSentClassifier(torch.nn.Module):
-    # TODO : Complete this function step by step.
     def __init__(self, config):
         super(BertSentClassifier, self).__init__()
         self.num_labels = config.num_labels
@@ -43,7 +42,6 @@ class BertSentClassifier(torch.nn.Module):
         # Step 2: Create a linear layer with in_features=config.hidden_size and out_features=config.num_labels
         self.linear = torch.nn.Linear(config.hidden_size, self.num_labels)
 
-    # TODO : Complete this function step by step.
     def forward(self, input_ids, attention_mask):
         # Note: the final bert contextualized embedding is the hidden state of [CLS] token (the first token)
 
